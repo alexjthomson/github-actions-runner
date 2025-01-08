@@ -1,0 +1,16 @@
+name: github_runner
+secrets:
+  runner_token:
+    file: ./token
+services:
+  github_runner:
+    container_name: github_runner
+    build:
+      context: .
+      dockerfile: dockerfile
+    restart: unless-stopped
+    secrets:
+      - runner_token
+    environment:
+      RUNNER_TOKEN_FILE: /run/secrets/runner_token
+      GITHUB_URL: https://github.com/prisma-engine
