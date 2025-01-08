@@ -4,10 +4,10 @@ This repository contains a self hosted Docker runner.
 ## Quick Start
 Create a directory for the runner and create the following files:
 
-## `token`
+##### `token`
 This file should contain the token for the runner.
 
-## `docker-compose.yaml`
+##### `docker-compose.yaml`
 ```yaml
 name: github_runner
 secrets:
@@ -27,7 +27,7 @@ services:
 
 ```
 
-### Environment Variables
+## Environment Variables
 - `RUNNER_TOKEN_FILE`: Path to the file containing the runner token.
 - `RUNNER_NAME` (optional): Name of the runner. This defaults to `unnamed` if
   none is provided.
